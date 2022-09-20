@@ -48,8 +48,49 @@
 - https://pixabay.com/
 - https://unsplash.com/
 
+# GIT
+## Install
+https://git-scm.com/downloads
+- Check cài đăt thành công:
++ Window: open cmd -> git -v
 
-# Step git
-git add .
-git commit -m 'homework1'
-git push
+MAC: 
+- open terminal
+- Install brew: https://docs.brew.sh/Installation
+- Install git: brew install git
+- Check git:  git -v
+
+## Create repository github 
+- Login: https://github.com/
+- Tạo 1 repository
+
+## Clone repository
+- Open VScode
+- Open folder code
+- Open terminal vscode tại folder code
+- Nhập: git clone <HTTPS của repository>
+
+* Lưu ý: Cần phải kiểm soát chặt chẽ cấu trúc folder code.
+- Repo bản thân tự tạo: dùng để code (code nhớ FORMAT)
+- Repo document: Yêu cầu không thay đổi code. Chỉ dùng git pull để lấy tài liệu.
+
+## Step git push code
+- Lần đầu:
++ Khởi tạo git: git init
++ Config email : git config --global user.email '<email>'
++ Config username : git config --global user.name '<name>'
++ Add toàn bộ file change: git add .
++ Tạo commit mô tả: git commit -m 'homework1'
++ git push
+- Những lần sau:
++ Add toàn bộ file change: git add .
++ Tạo commit mô tả: git commit -m 'homework1'
++ git push
+
+## Run HTML file:
+- MAC: open index.html
+- Window: start index.html
+
+* NOTE: 
+- Có thể chọn RUN -> START (F5)
+- Open folder -> click double vào tên file html
