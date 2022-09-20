@@ -47,3 +47,9 @@
 
 - https://pixabay.com/
 - https://unsplash.com/
+
+
+# Step git
+git add .
+git commit -m 'homework1'
+git push
