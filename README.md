@@ -93,4 +93,4 @@ MAC:
 
 * NOTE: 
 - Có thể chọn RUN -> START (F5)
-- Open folder -> click double vào tên file html
+- Open folder -> click double vào tên file html.
