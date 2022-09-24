@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ::-moz-selection {
+            /* Code for Firefox */
+            color: red;
+            background: yellow;
+        }
+
+        p::selection {
+            color: red;
+            background: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- style cho một vùng văn bản được người dùng chọn (hay còn gọi là "bôi đen").
+    Chỉ có một số thuộc tính css khả dụng với ::selection là color, background, curso, và outline. -->
+
+    <h1>Select some text on this page:</h1>
+
+    <p>This is a paragraph.</p>
+    <div>This is some text in a div element.</div>
+
+    <p><strong>Note:</strong> ::selection is not supported in Internet Explorer 8 and earlier versions.</p>
+    <p><strong>Note:</strong> Firefox supports an alternative, the ::-moz-selection property.</p>
+</body>
+
+</html>

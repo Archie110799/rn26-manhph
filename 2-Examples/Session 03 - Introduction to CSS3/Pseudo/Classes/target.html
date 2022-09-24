@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a:target {
+            border: 2px solid green;
+            background-color: red;
+        }
+    </style>
+</head>
+
+
+<body>
+    <!-- sẽ styles cho các phần tử được chọn nếu :
+    atttribute id của nó khớp với atttribute href của phẩn tử html a 
+    khi người dùng click vào phần tử a. -->
+    <h1>This is a heading</h1>
+
+    <p><a href="#news1">Jump to New content 1</a></p>
+    <p><a href="#news2">Jump to New content 2</a></p>
+
+    <p>Click on the links above and the :target selector highlight the current active HTML anchor.</p>
+
+    <p id="news1"><b>New content 1...</b></p>
+    <p id="news2"><b>New content 2...</b></p>
+
+    <p><b>Note:</b> Internet Explorer 8 and earlier versions do not support the :target selector.</p>
+</body>
+
+</html>

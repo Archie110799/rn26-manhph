@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input:in-range {
+            border: 2px solid yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Ngược lại với :out-of-range, 
+    :in-range chỉ chọn và styles cho phần tử HTML input nếu 
+    value nằm trong giới hạn được chỉ định. -->
+    <h3>A demonstration of the :in-range selector.</h3>
+
+    <input type="number" min="5" max="10" value="7">
+</body>
+
+</html>
