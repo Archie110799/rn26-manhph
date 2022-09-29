@@ -1,7 +1,25 @@
-h1 {
+/* h1 {
   color: orangered;
 }
 
 h2 {
   color: blue;
+}
+
+h1 {
+  font-size: 20pt;
+  line-height: 40px;
+  color: violet;
+} */
+
+.color-blue {
+  color: blue;
+}
+
+#color-red {
+  color: red;
+}
+
+.container {
+  padding:10px
 }

@@ -1,21 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      h1 {
-        font-size: 20pt;
-        line-height: 40px;
-        color: violet;
-      }
-    </style>
-  </head>
-  <body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="./mystyle.css">
+  <style>
+    h1 {
+      font-size: 20pt;
+      line-height: 40px;
+      color: violet;
+    }
+
+    .color-blue {
+      color: blue;
+    }
+
+    #color-red {
+      color: red;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="container">
     <h1>
       Welcome to CSS3
     </h1>
+
+    <h2 id="color-red">Color Red</h2>
+
+    <h2 class="color-blue"> Color blue</h2>
+    <h2 class="color-blue"> Color blue 1</h2>
 
     <h1>
       Welcome to internal style
@@ -30,5 +48,7 @@
     <p style="color: yellow;">
       Cannot be reused at any point of time in a Web page
     </p>
-  </body>
+  </div>
+</body>
+
 </html>

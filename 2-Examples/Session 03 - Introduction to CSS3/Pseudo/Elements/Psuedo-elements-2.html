@@ -14,7 +14,7 @@
     pseudo-element thường được sử dụng để thêm text, hình ảnh hay bất kỳ nội dung gì 
     phía trước nội dung của phần tử được chọn.  */
     h2::before {
-      background-image: url('Images/vietnam.png');
+      background-image: url('../Images/vietnam.png');
       background-size: 100%;
       background-position: center;
       /* Cùng 1 hàng */
@@ -27,7 +27,12 @@
     /* Tương tự như ::before, ::after cũng được sử dụng để thêm nội dung 
     nhưng là vào phía sau phần tử được chọn. */
     h2::after {
-      content: url('Images/quochuy.png');
+      content: url('../Images/quochuy.png');
+    }
+
+    input::placeholder, textarea::placeholder {
+      color: blue;
+      font-size: 1.5em;
     }
   </style>
 </head>

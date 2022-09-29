@@ -94,3 +94,36 @@ MAC:
 * NOTE: 
 - Có thể chọn RUN -> START (F5)
 - Open folder -> click double vào tên file html.
+
+#
+git log —oneline
+git reset ...
+tạo branch: git checkout -b manhph
+git add .
+git commit -m 'ádadsdasd'
+git commit —amend 
+
+git reset --soft HEAD~
+Git stash
+Git stash apply
+git cherry-pick —CODE
+
+git checkout development
+git pull origin development --rebase
+git checkout manhph
+git rebase development
+
+nếu có conflic thì sửa
+git add .
+git rebase --continue
+:wq
+git push
+git help -f
+
+
+git push
+git branch --show-current
+
+git remote add origin <remote repository URL>
+
+git branch -D …
