@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>ARRAY & LOOP</title>
+</head>
+
+<body></body>
+<script>
+  // Định nghĩa mảng
+  // Cách 1:
+  // var fruits = new Array('apple', 'orange', 'mango', 'lemon', 'watermelon');
+  // Cách 2:
+  var fruits = ['apple', 'orange', 'mango', 'lemon', 'watermelon'];
+
+
+
+  // Dùng for .. in
+  document.write('<h1>FOR .. IN: </h1>');
+  for (var i in fruits) {
+    document.write('Name: ' + fruits[i] + '<br />');
+    //console.log(fruits[i]);
+  }
+
+  document.write('<hr />');
+  document.write('<h1>FOR </h1>');
+  // Dùng for
+  for (var j = 0; j < fruits.length; j++) {
+    document.write('Name: ' + fruits[j] + '<br />');
+    //console.log(fruits[j]);
+  }
+
+  // Dùng while
+  document.write('<hr />');
+  document.write('<h1>EVEN NUMBERS: </h1>');
+  var count = 0;
+  while (count <= 10) {
+    if (count % 2 == 0) {
+      document.write('Number: ' + count + '<br />');
+    }
+    count++;
+  }
+
+
+  // Mảng 2 chiều
+
+  var array2D = new Array(2);
+  array2D[0] = new Array('Monitor', 165);
+  array2D[1] = new Array('Ram', 65);
+  console.log(array2D);
+</script>
+
+</html>

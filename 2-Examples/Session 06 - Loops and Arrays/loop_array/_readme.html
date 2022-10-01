@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // Cách phổ biến
+    const fruits = ["apple", "orange", "lemon"];
+
+    // Cách 2:
+    const x = new Array("apple", "orange", "lemon");
+
+    // Not recommended: code is too long
+    // for (let index = 0; index < fruits.length; index++) {
+    //   const element = fruits[index];
+    //   console.log(element)
+    // }
+
+    // forEach: easy mode
+    fruits.forEach(element => {
+      document.write("<h3>" + element + "</h3>");
+      console.log(element)
+    });
+
+    // Not recommended: code is hard to understand
+    // for (var index in fruits) {
+    //   const element = fruits[index];
+    //   console.log(element);
+    // }
+  </script>
+</body>
+
+</html>
