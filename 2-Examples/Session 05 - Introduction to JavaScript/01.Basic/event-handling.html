@@ -8,13 +8,17 @@
 
 <body>
   <h1>EVENT SAMPLES</h1>
-  <input type="text" value="" onblur="hideStyle(this)" onfocus="setStyle(this)" />
+  <input type="text" id="inputField" value="" onblur="hideStyle(this)" onfocus="setStyle(this)" />
   <input type="button" value="Focus me" onfocus="setStyle(this)" />
   <input type="button" onclick="displayMessage()" value="Click me" />
 </body>
 <script>
   function displayMessage() {
-    alert('Hello event handling');
+    let elm = document.getElementById('inputField')
+    elm.value = parseInt(elm.value) + 1
+    // console.log(elm)
+    console.log(elm.value)
+    // alert('Hello event handling');
   }
 
   function setStyle(element) {

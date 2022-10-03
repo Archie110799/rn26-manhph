@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Base/bootstrap-5.2.1-dist/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- handle event -->
+    <button class="btn__class" id="btn__id" onclick="handlePlus()">Plus</button>
+    <script>
+        // khoi tao bien
+        let number = 0
+        console.log(number)
+
+        // khoi tao func
+        function handlePlus() {
+            number = number + 1
+            console.log(number)
+        }
+        // JS DOM
+        let list = document.getElementsByTagName('button') // []
+        let getClass = document.getElementsByClassName('btn__class') 
+        // [ '<button class="btn__class" id="btn__id" onclick="handlePlus()">Plus</button>']
+        // []
+
+        // let getId = document.getElementById('btn__id')
+        getClass[0].innerHTML = 'abc' 
+        console.log(getClass[0]);
+        // getId.innerHTML = 'abc'
+        // getId.classList.add('text-danger')
+        // console.log(getId);
+        // console.log(list[0]);
+    </script>
+</body>
+
+</html>
