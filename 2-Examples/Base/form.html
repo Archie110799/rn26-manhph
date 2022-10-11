@@ -12,28 +12,49 @@
 <body>
     <!-- <header></header> -->
     <iframe class="w-100" style="height: 70px;" src="./header.html" seamless></iframe>
-    <form class="w-50 m-auto mt-3">
+    <form class="w-50 m-auto mt-3" onsubmit="return false;">
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            <label for="input__email" class="form-label">Email address</label>
+            <input type="text" class="form-control" id="input__email" aria-describedby="emailHelp"
+                onblur="console.log('onblur',this.value)">
+            <div id="error__email" class="form-text text-danger"></div>
         </div>
         <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
+            <label for="input__password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="input__password" onchange="console.log('onchange',this.value)">
         </div>
         <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Remember</label>
+            <input type="checkbox" class="form-check-input" id="input__checkbox">
+            <label class="form-check-label" for="input__checkbox">Remember</label>
         </div>
-    
-        <button type="submit" class="btn btn-primary">Submit</button>
+
+        <button type="reset" class="btn btn-primary">Reset</button>
+        <button onclick="handleSubmit(this)" class="btn btn-success">Submit</button>
+        <button onclick="handleReset()" class="btn btn-secondary">Reset DOM</button>
     </form>
     <footer></footer>
     <script src="./jquery/jquery.min.js"></script>
     <script src="./bootstrap-5.2.1-dist/js/bootstrap.bundle.min.js"></script>
     <script src="./bootstrap-5.2.1-dist/js/bootstrap.min.js"></script>
     <script src="./js/home.js"></script>
+    <script>
+        function handleReset() {
+            let elementInputEmail = document.getElementById('input__email');
+            let elementInputPassword = document.getElementById('input__password');
+            let elementInputCheckBox = document.getElementById('input__checkbox');
+            if (elementInputEmail) {
+                elementInputEmail.value = '';
+            }
+            if (elementInputCheckBox) {
+                elementInputCheckBox.checked = false;
+            }
+        }
+
+        function handleSubmit(event) {
+            console.log(event);
+            return false;
+        }
+    </script>
 </body>
 
 </html>

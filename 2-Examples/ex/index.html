@@ -5,36 +5,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Base/bootstrap-5.2.1-dist/css/bootstrap.min.css">
-    <title>Document</title>
+    <title>Change Title</title>
 </head>
 
 <body>
-    <!-- handle event -->
-    <button class="btn__class" id="btn__id" onclick="handlePlus()">Plus</button>
+    <form onsubmit="return false" id="form__login">
+        <input type="email" id="input__email" placeholder="Enter your email">
+        <input type="password" id="input__password">
+        <button onclick="handleSubmit()">Login</button>
+        <button onclick="handleReset()">Reset</button>
+    </form>
     <script>
-        // khoi tao bien
-        let number = 0
-        console.log(number)
+        function handleSubmit() {
+            const EMAIL = 'admin'
+            const PASSWORD = 'admin'
 
-        // khoi tao func
-        function handlePlus() {
-            number = number + 1
-            console.log(number)
+            let elementInputEmail = document.getElementById('input__email')
+            console.log('input email: ', elementInputEmail.value)
+            let elementInputPassword = document.getElementById('input__password')
+            console.log('input password: ', elementInputPassword.value)
+            elementInputPassword.value // get value
+            elementInputPassword.value = '' // set value
+
+            elementInputPassword.checked // get value
+            elementInputPassword.checked = false // set value
+
         }
-        // JS DOM
-        let list = document.getElementsByTagName('button') // []
-        let getClass = document.getElementsByClassName('btn__class') 
-        // [ '<button class="btn__class" id="btn__id" onclick="handlePlus()">Plus</button>']
-        // []
 
-        // let getId = document.getElementById('btn__id')
-        getClass[0].innerHTML = 'abc' 
-        console.log(getClass[0]);
-        // getId.innerHTML = 'abc'
-        // getId.classList.add('text-danger')
-        // console.log(getId);
-        // console.log(list[0]);
+        function handleReset() { 
+            alert('day la noi dung')
+        }
+
     </script>
 </body>
 
