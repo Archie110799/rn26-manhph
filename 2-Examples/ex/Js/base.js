@@ -1,6 +1,7 @@
-const NUMBER = 4;
+const NUMBER = 15;
+const NUMBER_2 = 20;
 
-bt4();
+u();
 
 function bt1() {
   if (NUMBER % 2 === 0) {
@@ -9,11 +10,6 @@ function bt1() {
     console.log("le");
   }
 }
-
-// Fibonacci
-8
-
-// khai n0 = 0 , n1 = 1
 
 function bt2() {
   let arrayRes = [0, 1, 1, 2, 3];
@@ -66,7 +62,7 @@ function bt4() {
 //  *****          index 3; * = 5; space = 1
 // *******         index 4; * = 7; space = 0
 
-function name(params) {
+function o() {
    let a = 3
    let b = 5
    let c = 2
@@ -86,4 +82,20 @@ function name(params) {
    // isNT = true
    // for (i = 2->4) -> 5 % i === 0 -> isNt = false
    // log(isNT)
+}
+
+function u() {
+  let startTime = performance.now()
+  let u = 1 
+  
+  for (let index = 1; (index <= NUMBER_2 && index <= NUMBER) ; index++) {
+    if (!(NUMBER % index) && !(NUMBER_2 % index)) {
+      u = index
+    }
+  }
+  
+  let endTime = performance.now()
+  console.log(`Call to doSomething took ${endTime - startTime} milliseconds`)
+
+  console.log(u)
 }
