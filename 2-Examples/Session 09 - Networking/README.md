@@ -69,3 +69,23 @@ DELETE: xóa tài nguyên trên server.
 CONNECT: thiết lập một kết nối tới server theo URI.
 OPTIONS: mô tả các tùy chọn giao tiếp cho resource.
 TRACE: thực hiện một bài test loop – back theo đường dẫn đến resource.
+
+# 
+1. Promise API
+- Trạng thái: 
++ Pending (đang xử lý)
++ Fulfilled (đã hoàn thành)
++ Rejected (đã bị từ chối)
+- Một Promise chỉ có thể thành công hoặc thất bại một lần duy nhất
+- Ngoài việc dùng để xử lý Promise bị lỗi, hàm callback trong catch() cũng được gọi khi có bất kỳ exception nào được bắn ra từ callback của hàm khởi tạo Promise. Vì thế bạn có thể dùng catch() cho việc lưu log.
+- Promises vs Callbacks
+2. asyn-await,
+- Được xây dựng trên Promises và tương thích với tất cả các Promise dựa trên API.
+- Async - khai báo một hàm bất đồng bộ (async function someName(){...}).
++ Tự động biến đổi một hàm thông thường thành một Promise.
++ Khi gọi tới hàm async nó sẽ xử lý mọi thứ và được trả về kết quả trong hàm của nó.
++ Async cho phép sử dụng Await.
+- Await - tạm dừng việc thực hiện các hàm async. (Var result = await someAsyncCall ()😉.
++ Khi được đặt trước một Promise, nó sẽ đợi cho đến khi Promise kết thúc và trả về kết quả.
++ Await chỉ làm việc với Promises, nó không hoạt động với callbacks.
++ Await chỉ có thể được sử dụng bên trong các function async.

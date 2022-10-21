@@ -35,3 +35,4 @@ Mặt khác, ngoài những ưu điểm nhưng mọi ngôn ngữ lập trình kh
 - Vì tính bảo mật nên client-side JavaScript không cho phép đọc và ghi các file.
 - JS không được hỗ trợ khi sử dụng trong kết nối mạng.
 - JavaScript không có khả năng đa luồng hoặc đa xử lý.
+
