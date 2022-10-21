@@ -3,11 +3,12 @@ window.onload = function (e) {
   //   deleteRowJs();
   //   addRowJq();
   //   addCollumnJquery();
-  // getListUsers();
+  getListUsers();
 };
 
 function gotoDetail(id) {
-  console.log(id);
+  console.log(window.location.href, id);
+  window.location.href = "./detail.html?id="+id;
 }
 
 function deleteRowJs(elm) {
@@ -15,6 +16,23 @@ function deleteRowJs(elm) {
   console.log(elmRow);
   elmRow.remove();
   // document.getElementById("table_users").deleteRow(index);
+}
+
+function deleteRowAPI(elm,id) {
+  fetch(
+    "https://63284e93a2e90dab7bdd0fd7.mockapi.io/api/v1/users/"+id,
+    {
+      method: "DELETE",
+    }
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      deleteRowJs(elm)
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
 }
 
 const myHtmlContent = `
@@ -38,7 +56,7 @@ function formatRow(user) {
         <button class="btn btn-success" onclick="gotoDetail(${
           user?.id
         })">Detail</button>
-        <button class="btn btn-danger" onclick="deleteRowJs(this)">Delete</button>
+        <button class="btn btn-danger" onclick="deleteRowAPI(this,${user?.id})">Delete</button>
     </td>
 `;
 }
