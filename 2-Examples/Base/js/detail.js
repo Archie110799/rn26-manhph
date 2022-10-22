@@ -1,10 +1,11 @@
 window.onload = function () {
-  getUser();
+  let id = getIdUrl();
+  getUser(id);
 };
 
-function getUser() {
-  let id = getIdUrl();
-  fetch("https://63284e93a2e90dab7bdd0fd7.mockapi.io/api/v1/users/" + id, {
+function getUser(id) {
+  let url = "https://63284e93a2e90dab7bdd0fd7.mockapi.io/api/v1/users/" + id
+  fetch(url, {
     method: "GET",
   })
     .then((response) => response.json())
@@ -28,7 +29,6 @@ function renderInfo(user) {
   const contentHTML = `
     <p>${user?.id}</p>
     <p>${user?.name}</p>
-    <p>${user?.avatar}</p>
   `;
   const elm = document.getElementById("info");
   elm.innerHTML = contentHTML;

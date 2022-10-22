@@ -8,7 +8,8 @@ window.onload = function (e) {
 
 function gotoDetail(id) {
   console.log(window.location.href, id);
-  window.location.href = "./detail.html?id="+id;
+  // ?id=1 -> params url
+  window.location.href = "./detail.html?id=" + id; // redirect
 }
 
 function deleteRowJs(elm) {
@@ -18,21 +19,27 @@ function deleteRowJs(elm) {
   // document.getElementById("table_users").deleteRow(index);
 }
 
-function deleteRowAPI(elm,id) {
-  fetch(
-    "https://63284e93a2e90dab7bdd0fd7.mockapi.io/api/v1/users/"+id,
-    {
-      method: "DELETE",
-    }
-  )
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-      deleteRowJs(elm)
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-    });
+function deleteRowAPI(elm, id) {
+  console.log(elm);
+  // call API delete user
+  // - xoa thanh cong
+  // + xoa row o trong table
+  // + call API listUser
+  // fetch(
+  //   "https://63284e93a2e90dab7bdd0fd7.mockapi.io/api/v1/users/"+id,
+  //   {
+  //     method: "DELETE",
+  //   }
+  // )
+  //   .then((response) => response.json())
+  //   .then((data) => {
+  //     console.log(data);
+  //     deleteRowJs(elm)
+  //     getListUsers();
+  //   })
+  //   .catch((error) => {
+  //     console.error("Error:", error);
+  //   });
 }
 
 const myHtmlContent = `
@@ -46,6 +53,11 @@ const myHtmlContent = `
     </td>
 `;
 
+function gotoDetailEx(id) {
+  console.log("gotoDetailEx", id);
+  window.location.href = `./detail.html?id=${id}`;
+}
+
 function formatRow(user) {
   return `
     <th scope="row" onclick="postUser()">${user?.id}</th>
@@ -53,12 +65,41 @@ function formatRow(user) {
     <td class="text-break">${user?.avatar}</td>
     <td>${user?.name.split(" ")[0]}</td>
     <td>
-        <button class="btn btn-success" onclick="gotoDetail(${
+        <button class="btn btn-success" onclick="gotoDetailEx(${
           user?.id
         })">Detail</button>
-        <button class="btn btn-danger" onclick="deleteRowAPI(this,${user?.id})">Delete</button>
+        <button class="btn btn-danger" onclick="deleteUser(${
+          user?.id
+        })">Delete</button>
     </td>
 `;
+}
+
+function deleteUser(id) {
+  deleteUserAPI(id);
+}
+
+function deleteUserAPI(id) {
+  console.log("deleteUserAPI", id);
+  fetch("https://63284e93a2e90dab7bdd0fd7.mockapi.io/api/v1/users/" + id, {
+    method: "DELETE",
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      resetTbody()
+      getListUsers();
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+}
+
+function resetTbody() {
+  var tableRef = document
+    .getElementById("table_users")
+    .getElementsByTagName("tbody")[0];
+  tableRef.innerHTML = "";
 }
 function addRowJs(user) {
   var tableRef = document
