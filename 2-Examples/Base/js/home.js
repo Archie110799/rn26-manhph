@@ -1,32 +1,32 @@
 if (typeof document === "undefined") {
   // during server evaluation
   console.log("Server loadding...!!!!");
-  
 } else {
-  // during client's browser evaluation
-  const collection = document.getElementsByClassName("item");
-  // console.log(collection);
-  // console.log(window.location.href);
-  
   //ajax
-  $.get("./header.html", function(data, status){
+  $.get("./header.html", function (data, status) {
     // alert("Data: " + data + "\nStatus: " + status);
     document.querySelector("header").innerHTML = data;
+    checkPath() // xu ly bat dong bo
   });
+
+  $.get("./footer.html", function (data, status) {
+    // alert("Data: " + data + "\nStatus: " + status);
+    document.querySelector("footer").innerHTML = data;
+  });
+
 }
 
-// fetch("header.html")
-//   .then((response) => {
-//     return response.text();
-//   })
-//   .then((data) => {
-//     document.querySelector("header").innerHTML = data;
-//   });
+function checkPath() {
+  const PATH_NAME = window.location.href;
+  console.log('HREF', PATH_NAME);
 
-// fetch("footer.html")
-//   .then((response) => {
-//     return response.text();
-//   })
-//   .then((data) => {
-//     document.querySelector("footer").innerHTML = data;
-//   });
+  let js = document.querySelectorAll('a')
+  let listItemNav = $('a') 
+  for (let index = 0; index < listItemNav.length; index++) {
+    const element = listItemNav[index];
+    if (PATH_NAME === element.href) {
+      $(element).addClass( "active text-danger" );
+    }
+  }
+  
+}
