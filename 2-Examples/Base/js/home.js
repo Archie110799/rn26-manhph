@@ -1,11 +1,17 @@
 if (typeof document === "undefined") {
   // during server evaluation
   console.log("Server loadding...!!!!");
+  $.get("header.html", function(data, status){
+    alert("Data: " + data + "\nStatus: " + status);
+  });
 } else {
   // during client's browser evaluation
   const collection = document.getElementsByClassName("item");
   // console.log(collection);
   // console.log(window.location.href);
+  $.get("./header.html", function(data, status){
+    alert("Data: " + data + "\nStatus: " + status);
+  });
 }
 
 // fetch("header.html")
