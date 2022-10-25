@@ -12,16 +12,16 @@
 <body>
     <!-- <header></header> -->
     <iframe class="w-100" style="height: 70px;" src="./header.html" seamless></iframe>
-    <form class="w-50 m-auto mt-3" onsubmit="return false;">
+    <form id="myForm" class="w-50 m-auto mt-3" onsubmit="return false;">
         <div class="mb-3">
             <label for="input__email" class="form-label">Email address</label>
-            <input type="text" class="form-control" id="input__email" aria-describedby="emailHelp"
+            <input type="text" name="email"  class="form-control" id="input__email" aria-describedby="emailHelp"
                 onblur="console.log('onblur',this.value)">
             <div id="error__email" class="form-text text-danger"></div>
         </div>
         <div class="mb-3">
             <label for="input__password" class="form-label">Password</label>
-            <input type="password" class="form-control" id="input__password"
+            <input type="password" name="password" class="form-control" id="input__password"
                 onchange="console.log('onchange',this.value)">
         </div>
         <div class="mb-3 form-check">
@@ -35,6 +35,8 @@
     </form>
     <footer></footer>
     <script src="./jquery/jquery.min.js"></script>
+    <script src="./jquery/jquery.validate.min.js"></script>
+    
     <script src="./bootstrap-5.2.1-dist/js/bootstrap.bundle.min.js"></script>
     <script src="./bootstrap-5.2.1-dist/js/bootstrap.min.js"></script>
     <script src="./js/home.js"></script>
@@ -55,14 +57,14 @@
             let elementInputEmail = document.getElementById('input__email');
             let elementInputPassword = document.getElementById('input__password');
             let elementInputCheckBox = document.getElementById('input__checkbox');
-            
+
             let objectUser = {
                 name: elementInputEmail?.value,
                 // avatar:
                 //     "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/254.jpg",
             }
             // console.log(objectUser);
-            postData(objectUser)
+            // postData(objectUser)
             return false;
         }
         function postData(user) {
@@ -79,6 +81,113 @@
                     console.error("Error:", error);
                 });
         }
+    </script>
+    <!-- <script>
+        jQuery.validator.addMethod(
+            "regex",
+            function (value, element, regexp) {
+                if (regexp.constructor != RegExp)
+                    regexp = new RegExp(regexp);
+                else if (regexp.global)
+                    regexp.lastIndex = 0;
+                return this.optional(element) || regexp.test(value);
+            }, "erreur expression reguliere"
+        );
+        const patternEmail = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i
+        const settings = {
+            rules: {
+                username: {
+                    required: true,
+                    minlength: 6,
+                    maxlength: 20,
+                    //rangelength: [6, 20]
+                },
+                age: {
+                    required: true,
+                    min: 18,
+                    max: 60,
+                    // hoặc
+                    // digits: true,
+                    // range: [18, 60],
+                    //step: 10 // step: x => so chia het cho x
+                },
+                birthday: {
+                    required: true,
+                    date: true,
+                },
+                email: {
+                    required: true,
+                    email: true,
+                    minlength: 6,
+                },
+                upload: {
+                    required: true,
+                    accept: 'image/jpg,image/jpeg,image/png,image/gif',
+                },
+                checkme: {
+                    required: true,
+                },
+                password: {
+                    required: true,
+                    rangelength: [6, 12],
+                    regex: /^(\+33\.|0)[0-9]{9}$/
+                },
+            },
+            messages: {
+                username: {
+                    required: 'Bạn chưa nhập tên đăng nhập',
+                },
+                email: {
+                    required: 'Bạn chưa nhập email',
+                    minlength: jQuery.validator.format('Toi thieu co {0} ky tu'),
+                    email: 'Dia chi email khong hop le',
+                },
+                birthday: {
+                    required: 'Chưa nhập ngày sinh hoặc ngày sinh không hợp lệ',
+                },
+                checkme: {
+                    required: 'Please select',
+                },
+                password: {
+                    required: 'Bạn chưa nhập password',
+                    rangelength: jQuery.validator.format('Can co {0}-{1} ky tu'),
+                    regex: 'regex asdasdas'
+                },
+            },
+        };
+
+        const validator = $('#myForm').validate(settings);
+
+    </script> -->
+    <script>
+        var settings = {
+            rules: {
+                email: {
+                    required: true,
+                    email: true,
+                    minlength: 6,
+                },
+                password: {
+                    required: true,
+                    minlength: 6,
+                    maxlength: 12,
+                },
+            },
+            messages: {
+                email: {
+                    required: 'Bạn chưa nhập email',
+                    minlength: jQuery.validator.format('Toi thieu co {0} ky tu'),
+                    email: 'Dia chi email khong hop le',
+                },
+                password: {
+                    required: 'Yeu cau nhap password',
+                    minlength: 'Toi thieu {0} ki tu',
+                    maxlength: 'Toi da {0} ki tu',
+                },
+            },
+        };
+
+        var validator = $('#myForm').validate(settings);
     </script>
 </body>
 
