@@ -7,9 +7,12 @@ if (typeof document === "undefined") {
   const collection = document.getElementsByClassName("item");
   // console.log(collection);
   // console.log(window.location.href);
-  // $.get("./header.html", function(data, status){
-  //   alert("Data: " + data + "\nStatus: " + status);
-  // });
+  
+  //ajax
+  $.get("./header.html", function(data, status){
+    // alert("Data: " + data + "\nStatus: " + status);
+    document.querySelector("header").innerHTML = data;
+  });
 }
 
 // fetch("header.html")
