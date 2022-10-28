@@ -29,7 +29,17 @@ function renderInfo(user) {
   const contentHTML = `
     <p>${user?.id}</p>
     <p>${user?.name}</p>
+    <button onclick="gotoForm()">Update</button>
   `;
   const elm = document.getElementById("info");
   elm.innerHTML = contentHTML;
+}
+
+function gotoForm() {
+  let id = getIdUrl();
+  gotoFormURL(id);
+}
+
+function gotoFormURL(id) {
+  window.location.href = `./form.html?id=${id}`;
 }

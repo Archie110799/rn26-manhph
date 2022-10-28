@@ -30,7 +30,7 @@
         </div>
 
         <button type="reset" class="btn btn-primary">Reset</button>
-        <button onclick="handleSubmit(this)" class="btn btn-success">Submit</button>
+        <button onclick="handleSubmit(this)" id="btn__submit" class="btn btn-success">Submit</button>
         <button onclick="handleReset()" class="btn btn-secondary">Reset DOM</button>
     </form>
     <footer></footer>
@@ -41,6 +41,28 @@
     <script src="./bootstrap-5.2.1-dist/js/bootstrap.min.js"></script>
     <script src="./js/home.js"></script>
     <script>
+        window.onload = function () {
+            let id = getIdUrl();
+            console.log(id);
+            // call api //
+            let person = {
+                id: "18",
+                name : 'abc',
+                age : 18,
+                address : "asdsad"
+            }
+            document.getElementById('input__email').value = person.name
+            document.getElementById('btn__submit').textContent = 'Update'
+            
+            // let elementInputEmail = document.getElementById('input__email');
+            // elementInputEmail.value = person.name
+            // console.log(elementInputEmail);
+        };
+        function getIdUrl() {
+            let url = new URL(window.location.href);
+            let id = url.searchParams.get("id");
+            return id;
+        }
         function handleReset() {
             let elementInputEmail = document.getElementById('input__email');
             let elementInputPassword = document.getElementById('input__password');
@@ -63,6 +85,13 @@
                 // avatar:
                 //     "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/254.jpg",
             }
+            let id = getIdUrl();
+            if(id){
+                console.log('Update');
+            }else{
+                console.log('Create');
+            }
+            console.log(id);
             // console.log(objectUser);
             // postData(objectUser)
             return false;
