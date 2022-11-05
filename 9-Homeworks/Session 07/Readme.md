@@ -13,3 +13,10 @@ INPUT: h = 5
 ***
 ****
 *****
+
+-> Tim sao va cach bien thien theo h = 5  va index
+    *           -> index = 1 : cach = 4 : sao = 1
+   ***          -> index = 2 : cach = 3 : sao = 3
+  *****         -> index = 3 : cach = 2 : sao = 5
+ *******        -> index = 4 : cach = 1 : sao = 7
+*********       -> index = 5 : cach = 0 : sao = 9
